@@ -1,0 +1,25 @@
+{
+  "name": "gin-start-kit",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Negaihoshi/gin-start-kit",
+  "authors": [
+    "Negaihoshi <e222et@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "*",
+    "is.js": "*"
+  }
+}
