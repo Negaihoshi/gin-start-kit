@@ -18,7 +18,7 @@ func main() {
 
 	server.Static("/public/css/", "./public/css")
 	server.Static("/public/js/", "./public/js/")
-	server.Static("/public/fonts/", "./public/fonts/")
+	server.Static("/public/font/", "./public/fonts/")
 	server.Static("/public/img/", "./public/img/")
 
 	server.GET("/", IndexRouter)
@@ -27,7 +27,7 @@ func main() {
 	server.GET("/signin", SigninRoute)
 	server.GET("/signup", SignupRoute)
 
-	server.Run(":8080")
+	server.Run(":3000")
 }
 
 func IndexRouter(g *gin.Context) {

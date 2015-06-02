@@ -19,7 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "*",
-    "is.js": "*"
+    "materialize": "*"
   }
 }
