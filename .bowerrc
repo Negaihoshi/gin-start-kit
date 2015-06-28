@@ -1,0 +1,12 @@
+{
+  "analytics": false,
+  "timeout": 12000,
+  "registry": {
+    "search": [
+      "https://bower.herokuapp.com"
+    ]
+  },
+  "scripts": {
+    "postinstall": "wiredep -s templates/layout.jade"
+  }
+}

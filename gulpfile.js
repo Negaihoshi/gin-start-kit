@@ -1,28 +1,30 @@
 var gulp = require('gulp');
 var inject = require('gulp-inject');
 var wiredep = require('wiredep').stream;
+var jade = require('gulp-jade');
 
 gulp.task('default', function() {
   // place code for your default task here
 });
 
 gulp.task('bower', function () {
-  gulp.src('./templates/layout/_base.html')
+  gulp.src('./templates/layout.jade')
     .pipe(wiredep({
       optional: 'configuration',
       goes: 'here'
     }))
-    .pipe(gulp.dest('./templates/layout/'));
+    .pipe(gulp.dest('./templates/'));
 });
 
-var gulp = require('gulp');
-var inject = require('gulp-inject');
 
-gulp.task('test', function () {
-  var target = gulp.src('./templates/layout/_base.html');
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  var sources = gulp.src(['./bower_components/**/dist/*.min.js', './bower_components/**/*.min.css'], {read: false});
 
-  return target.pipe(inject(sources))
-    .pipe(gulp.dest('./templates/layout/'));
+gulp.task('templates', function() {
+
+  gulp.src('./templates/*.jade')
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./.tmp/'));
 });
+
+gulp.task('default', ['bower', 'templates']);
