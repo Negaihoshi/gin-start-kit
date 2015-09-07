@@ -24,7 +24,7 @@ gulp.task('templates', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('./.tmp/'));
+    .pipe(gulp.dest('./.tmp/public/template/'));
 });
 
 gulp.task('default', ['bower', 'templates']);

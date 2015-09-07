@@ -1,26 +1,15 @@
 package main
 
-import (
-	"html/template"
+import "github.com/gin-gonic/gin"
 
-	"github.com/gin-gonic/gin"
-)
-
-var server *gin.Engine
-var templates map[string]*template.Template
+var router *gin.Engine
 
 func main() {
 
 	gin.SetMode(gin.DebugMode)
 	// gin.SetMode(gin.TestMode)
 	// gin.SetMode(gin.ReleaseMode)
-	server = gin.Default()
-
-	server.Static("/public/css/", "./public/css")
-	server.Static("/public/js/", "./public/js/")
-	server.Static("/public/font/", "./public/fonts/")
-	server.Static("/public/img/", "./public/img/")
-	server.Static("/public/template", "./tmp/public/template")
-
-	server.Run(":3000")
+	router = gin.Default()
+	routerService()
+	router.Run(":3000")
 }

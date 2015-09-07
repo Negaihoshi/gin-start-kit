@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "*"
+    "blocks": "~0.3.3",
+    "materialize": "latest"
   }
 }
